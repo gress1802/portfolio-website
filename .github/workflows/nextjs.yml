@@ -56,15 +56,13 @@ jobs:
           static_site_generator: next
 
       - name: Restore cache
-        run: |
-          cd portfolio-frontend
-          actions/cache@v4
+        uses: actions/cache@v4
         with:
           path: |
-            .next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('package-lock.json', 'yarn.lock') }}-${{ hashFiles('**/*.[jt]s', '**/*.[jt]sx') }}
+            portfolio-frontend/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('portfolio-frontend/package-lock.json', 'portfolio-frontend/yarn.lock') }}-${{ hashFiles('portfolio-frontend/**/*.[jt]s', 'portfolio-frontend/**/*.[jt]sx') }}
           restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('package-lock.json', 'yarn.lock') }}-
+            ${{ runner.os }}-nextjs-${{ hashFiles('portfolio-frontend/package-lock.json', 'portfolio-frontend/yarn.lock') }}-
 
       - name: Install dependencies
         run: |
