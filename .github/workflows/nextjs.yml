@@ -21,15 +21,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Navigate to portfolio-frontend
+        working-directory: ./portfolio-frontend
+        run: echo "Moved to portfolio-frontend directory"
+
       - name: Setup Node.js environment
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: 'npm'
-
-      - name: Navigate to portfolio-frontend
         working-directory: ./portfolio-frontend
-        run: echo "Moved to portfolio-frontend directory"
 
       - name: Install dependencies
         working-directory: ./portfolio-frontend
@@ -53,4 +54,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4 
+        uses: actions/deploy-pages@v4
