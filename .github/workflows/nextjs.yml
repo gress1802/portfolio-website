@@ -25,7 +25,7 @@ jobs:
         run: pwd
 
       - name: Print working directory (portfolio-frontend)
-        working-directory: ./portfolio-frontend
+        working-directory: ./portfolio-website/portfolio-frontend
         run: pwd
 
       - name: Setup Node
@@ -35,17 +35,17 @@ jobs:
           cache: npm
         
       - name: Install dependencies
-        working-directory: ./portfolio-frontend
+        working-directory: ./portfolio-website/portfolio-frontend
         run: npm ci
         
       - name: Build with Next.js
-        working-directory: ./portfolio-frontend
+        working-directory: ./portfolio-website/portfolio-frontend
         run: npm run build
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./portfolio-frontend/out
+          path: ./portfolio-website/portfolio-frontend/out
 
   deploy:
     environment:
