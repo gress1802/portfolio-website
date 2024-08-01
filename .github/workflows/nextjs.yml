@@ -25,6 +25,9 @@ jobs:
       - name: Change Directory to Portfolio Frontend
         run: cd portfolio-frontend
 
+      - name: List Directory Contents
+        run: ls
+
       - name: Detect package manager
         id: detect-package-manager
         run: |
