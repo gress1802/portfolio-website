@@ -1,11 +1,8 @@
 name: Deploy Next.js site to Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 permissions:
@@ -23,12 +20,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        
-      - name: Change to portfolio-frontend directory
-        run: cd portfolio-frontend
 
       - name: Detect package manager
         id: detect-package-manager
+        working-directory: ./portfolio-frontend
         run: |
           if [ -f "yarn.lock" ]; then
             echo "manager=yarn" >> $GITHUB_OUTPUT
@@ -49,12 +44,14 @@ jobs:
         with:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
-        
+        working-directory: ./portfolio-frontend
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
           static_site_generator: next
-        
+        working-directory: ./portfolio-frontend
+
       - name: Restore cache
         uses: actions/cache@v4
         with:
@@ -63,17 +60,21 @@ jobs:
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
-        
+        working-directory: ./portfolio-frontend
+
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-        
+        working-directory: ./portfolio-frontend
+
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
-        
+        working-directory: ./portfolio-frontend
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
+        working-directory: ./portfolio-frontend
 
   deploy:
     environment:
@@ -85,3 +86,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact: ./out
+        working-directory: ./portfolio-frontend
