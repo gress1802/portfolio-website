@@ -86,6 +86,28 @@ const IntroductionSection = () => {
       <Typography variant="body1" sx={{ mt: 2, maxWidth: '600px' }}>
         I am passionate about leveraging my technical expertise to solve real-world problems and create impactful solutions. Whether developing AI-driven tools or building user-friendly web applications, I am committed to learning and growing with new technologies.
       </Typography>
+      <Typography variant="h5" component="h3" sx={{ mt: 6, mb: 2 }}>
+        Technical Skills and Tools
+      </Typography>
+      <Box sx={{ 
+        height: '2px', 
+        width: '50px', 
+        backgroundColor: 'primary.main', 
+        margin: '0 auto', 
+        mb: 4 
+      }} />
+      <Typography variant="body1" sx={{ maxWidth: '600px', mt: 2 }}>
+        <strong>Programming Languages:</strong> Python, JavaScript, TypeScript, Java, C++
+      </Typography>
+      <Typography variant="body1" sx={{ maxWidth: '600px', mt: 2 }}>
+        <strong>Frameworks & Libraries:</strong> React, Angular, Node.js, Express, Spring Boot, PyTorch, Hugging Face Transformers
+      </Typography>
+      <Typography variant="body1" sx={{ maxWidth: '600px', mt: 2 }}>
+        <strong>DevOps & Cloud:</strong> Azure, AWS, Docker, Terraform, GitHub Actions, Azure DevOps
+      </Typography>
+      <Typography variant="body1" sx={{ maxWidth: '600px', mt: 2 }}>
+        <strong>Databases:</strong> MongoDB, MySQL, PostgreSQL, Azure SQL, Redis
+      </Typography>
     </Box>
   );
 };
