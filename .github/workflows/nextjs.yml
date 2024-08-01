@@ -29,6 +29,7 @@ jobs:
         with:
           node-version: "20"
           cache: npm
+        working-directory: ./portfolio-frontend
 
       - name: Change to portfolio-frontend directory
         working-directory: ./portfolio-frontend
