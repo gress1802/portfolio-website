@@ -22,15 +22,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Change Directory to Portfolio Frontend
-        run: cd portfolio-frontend
-
-      - name: List Directory Contents
+      - name: List Root Directory Contents
         run: ls
 
       - name: Detect package manager
         id: detect-package-manager
         run: |
+          cd portfolio-frontend
           if [ -f "yarn.lock" ]; then
             echo "manager=yarn" >> $GITHUB_OUTPUT
             echo "command=install" >> $GITHUB_OUTPUT
@@ -58,7 +56,9 @@ jobs:
           static_site_generator: next
 
       - name: Restore cache
-        uses: actions/cache@v4
+        run: |
+          cd portfolio-frontend
+          actions/cache@v4
         with:
           path: |
             .next/cache
@@ -67,15 +67,19 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('package-lock.json', 'yarn.lock') }}-
 
       - name: Install dependencies
-        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+        run: |
+          cd portfolio-frontend
+          ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
 
       - name: Build with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} next build
+        run: |
+          cd portfolio-frontend
+          ${{ steps.detect-package-manager.outputs.runner }} next build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: portfolio-frontend/out
 
   # Deployment job
   deploy:
