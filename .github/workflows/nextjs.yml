@@ -20,13 +20,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        
+        with:
+          path: ./repo
+
       - name: Print working directory (root)
         run: pwd
 
-      - name: Print working directory (portfolio-frontend)
-        working-directory: ./portfolio-website/portfolio-frontend
-        run: pwd
+      - name: List root directory contents
+        run: ls -la
+
+      - name: List contents of repo directory
+        run: ls -la ./repo
+
+      - name: List contents of portfolio-frontend directory
+        run: ls -la ./repo/portfolio-frontend
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -35,17 +42,20 @@ jobs:
           cache: npm
         
       - name: Install dependencies
-        working-directory: ./portfolio-website/portfolio-frontend
+        working-directory: ./repo/portfolio-frontend
         run: npm ci
         
       - name: Build with Next.js
-        working-directory: ./portfolio-website/portfolio-frontend
+        working-directory: ./repo/portfolio-frontend
         run: npm run build
         
+      - name: List contents of out directory after build
+        run: ls -la ./repo/portfolio-frontend/out
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./portfolio-website/portfolio-frontend/out
+          path: ./repo/portfolio-frontend/out
 
   deploy:
     environment:
