@@ -31,4 +31,4 @@ jobs:
         with:
           personal_token: ${{ secrets.ACTIONS_DEPLOY_TOKEN }}
           publish_dir: ./portfolio-frontend/out
-          cname: CNAME  # Remove this line if you are not using a custom domain
+          cname: CNAME 
