@@ -1,0 +1,32 @@
+name: Deploy Next.js to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # or the branch you want to deploy from
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'  # Use the version of Node.js you need
+
+      - name: Install dependencies
+        run: cd portfolio-frontend && npm install
+
+      - name: Build the project
+        run: cd portfolio-frontend && npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.ACTIONS_DEPLOY_TOKEN }}
+          publish_dir: ./portfolio-frontend/out
+          cname: CNAME  # Remove this line if you are not using a custom domain
