@@ -105,7 +105,7 @@ const IntroductionSection = () => {
       <Typography variant="body1" sx={{ maxWidth: '600px', mt: 2 }}>
         <strong>DevOps & Cloud:</strong> Azure, AWS, Docker, Terraform, GitHub Actions, Azure DevOps
       </Typography>
-      <Typography variant="body1" sx={{ maxWidth: '600px', mt: 2 }}>
+      <Typography variant="body1" sx={{ maxWidth: '600px', mt: 2, pb: 4 }}>
         <strong>Databases:</strong> MongoDB, MySQL, PostgreSQL, Azure SQL, Redis
       </Typography>
     </Box>
