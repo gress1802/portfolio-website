@@ -97,7 +97,7 @@ const IntroductionSection = () => {
         mb: 4 
       }} />
       <Typography variant="body1" sx={{ maxWidth: '600px', mt: 2 }}>
-        <strong>Programming Languages:</strong> Python, JavaScript, TypeScript, Java, C++
+        <strong>Programming Languages:</strong> Python, JavaScript, TypeScript, Java, C#, SQL, HTML, CSS
       </Typography>
       <Typography variant="body1" sx={{ maxWidth: '600px', mt: 2 }}>
         <strong>Frameworks & Libraries:</strong> React, Angular, Node.js, Express, Spring Boot, PyTorch, Hugging Face Transformers
@@ -106,7 +106,7 @@ const IntroductionSection = () => {
         <strong>DevOps & Cloud:</strong> Azure, AWS, Docker, Terraform, GitHub Actions, Azure DevOps
       </Typography>
       <Typography variant="body1" sx={{ maxWidth: '600px', mt: 2, pb: 4 }}>
-        <strong>Databases:</strong> MongoDB, MySQL, PostgreSQL, Azure SQL, Redis
+        <strong>Databases:</strong> MongoDB, SQL Server, Azure SQL, Redis
       </Typography>
     </Box>
   );
