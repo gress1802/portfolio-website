@@ -1,11 +1,8 @@
 name: Deploy Next.js site to Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 permissions:
@@ -24,11 +21,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         
-      - name: Change to portfolio-frontend directory
-        working-directory: ./portfolio-frontend
-        run: echo "Changed directory to portfolio-frontend"
+      - name: Print working directory (root)
+        run: pwd
 
-      - name: Print working directory
+      - name: Print working directory (portfolio-frontend)
+        working-directory: ./portfolio-frontend
         run: pwd
 
       - name: Setup Node
@@ -48,7 +45,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./portfolio-frontend/out
+          path: ./out
+        working-directory: ./portfolio-frontend
 
   deploy:
     environment:
