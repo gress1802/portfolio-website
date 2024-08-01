@@ -8,7 +8,7 @@ export default nextConfig;
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    //basePath: "/portfolio-frontend",
+    basePath: "/portfolio-frontend",
     output: "export",  // Enables static exports
     reactStrictMode: true,
   };
