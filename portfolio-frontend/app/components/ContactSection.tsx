@@ -87,7 +87,7 @@ const ContactSection = () => {
       </Typography>
       <Box>
         <Link
-          href="https://github.com/josephgress"
+          href="https://github.com/gress1802"
           sx={{ mx: 2, color: theme.palette.primary.main }}
           target="_blank"
           rel="noopener"
@@ -95,7 +95,7 @@ const ContactSection = () => {
           GitHub
         </Link>
         <Link
-          href="https://linkedin.com/in/josephgress"
+          href="https://www.linkedin.com/in/joseph-gress/"
           sx={{ mx: 2, color: theme.palette.primary.main }}
           target="_blank"
           rel="noopener"
