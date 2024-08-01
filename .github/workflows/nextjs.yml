@@ -24,17 +24,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         
+      - name: Change to portfolio-frontend directory
+        working-directory: ./portfolio-frontend
+        run: echo "Changed directory to portfolio-frontend"
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: npm
-        working-directory: ./portfolio-frontend
-
-      - name: Change to portfolio-frontend directory
-        working-directory: ./portfolio-frontend
-        run: echo "Changed directory to portfolio-frontend"
-
+        
       - name: Install dependencies
         working-directory: ./portfolio-frontend
         run: npm ci
