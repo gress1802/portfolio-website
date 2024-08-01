@@ -25,7 +25,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: 'yarn'
+          cache: 'npm'
 
       - name: Navigate to portfolio-frontend
         working-directory: ./portfolio-frontend
@@ -33,11 +33,11 @@ jobs:
 
       - name: Install dependencies
         working-directory: ./portfolio-frontend
-        run: yarn install
+        run: npm ci
 
       - name: Build Next.js site
         working-directory: ./portfolio-frontend
-        run: yarn next build
+        run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -53,4 +53,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v4 f
