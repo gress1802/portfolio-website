@@ -45,8 +45,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
-        working-directory: ./portfolio-frontend
+          path: ./portfolio-frontend/out
 
   deploy:
     environment:
