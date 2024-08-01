@@ -22,7 +22,7 @@ jobs:
         run: cd portfolio-frontend && npm install
 
       - name: Build the project
-        run: cd portfolio-frontend && npm run build && npm run export
+        run: cd portfolio-frontend && npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
