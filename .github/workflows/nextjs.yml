@@ -9,6 +9,8 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
+    environment: github-pages  # Specify the environment for GitHub Pages deployment
+
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v3
