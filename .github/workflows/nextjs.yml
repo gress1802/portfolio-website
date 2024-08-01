@@ -21,24 +21,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Navigate to portfolio-frontend
-        working-directory: ./portfolio-frontend
-        run: echo "Moved to portfolio-frontend directory"
-
       - name: Setup Node.js environment
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: 'npm'
-        working-directory: ./portfolio-frontend
+
+      - name: Navigate to portfolio-frontend
+        run: cd ./portfolio-frontend
 
       - name: Install dependencies
-        working-directory: ./portfolio-frontend
         run: npm ci
+        working-directory: ./portfolio-frontend
 
       - name: Build Next.js site
-        working-directory: ./portfolio-frontend
         run: npm run build
+        working-directory: ./portfolio-frontend
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
