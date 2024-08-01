@@ -24,22 +24,23 @@ jobs:
       - name: Print current directory after checkout
         run: pwd
 
+      - name: Navigate to portfolio-frontend
+        run: cd portfolio-frontend && pwd
+
       - name: Setup Node.js environment
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: 'npm'
+        working-directory: ./portfolio-frontend
 
-      - name: Print current directory after setting up Node.js
-        run: pwd
+      - name: Install dependencies
+        run: npm ci
+        working-directory: ./portfolio-frontend
 
-      - name: Install dependencies and build
-        run: |
-          pwd
-          cd portfolio-frontend
-          pwd
-          npm ci
-          npm run build
+      - name: Build Next.js site
+        run: npm run build
+        working-directory: ./portfolio-frontend
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
