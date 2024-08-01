@@ -35,19 +35,19 @@ jobs:
       - name: List contents of portfolio-frontend directory
         run: ls -la ./repo/portfolio-frontend
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: npm
-        
+      - name: Setup Node in portfolio-frontend
+        run: |
+          cd repo/portfolio-frontend
+          npm config set cache /home/runner/.npm --global
+        shell: bash
+
       - name: Install dependencies
-        run: npm ci
         working-directory: ./repo/portfolio-frontend
+        run: npm ci
         
       - name: Build with Next.js
-        run: npm run build
         working-directory: ./repo/portfolio-frontend
+        run: npm run build
         
       - name: List contents of out directory after build
         run: ls -la ./repo/portfolio-frontend/out
