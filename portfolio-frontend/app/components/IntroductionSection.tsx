@@ -100,7 +100,7 @@ const IntroductionSection = () => {
         <strong>Programming Languages:</strong> Python, JavaScript, TypeScript, Java, C#, SQL, HTML, CSS
       </Typography>
       <Typography variant="body1" sx={{ maxWidth: '600px', mt: 2 }}>
-        <strong>Frameworks & Libraries:</strong> React, Angular, Node.js, Express, Spring Boot, PyTorch, Hugging Face Transformers
+        <strong>Frameworks & Libraries:</strong> React, Angular, Node.js, Express, Spring Boot, PyTorch, .NET, Hugging Face Transformers
       </Typography>
       <Typography variant="body1" sx={{ maxWidth: '600px', mt: 2 }}>
         <strong>DevOps & Cloud:</strong> Azure, AWS, Docker, Terraform, GitHub Actions, Azure DevOps
