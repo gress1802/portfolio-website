@@ -15,7 +15,7 @@ const workExperience: WorkExperience[] = [
     title: 'Solution Architect Intern',
     company: 'Johnson Controls',
     location: ['La Crosse, WI', 'Milwaukee, WI'],
-    date: 'Sept. 2021 – Present',
+    date: 'April 2024 – Present',
     responsibilities: [
       'Played a key role in the development of a sales copilot (RAG), primarily utilizing Azure OpenAI (GPT-4), Azure AI Search, Azure ML Prompt Flow, Azure Blob Storage, and Azure Document Intelligence to save approximately 15% of our sales rep’s time spent searching documents.',
       'Wrote Terraform IaC scripts to provision Azure cloud infrastructure and built Github Actions CI/CD pipelines for multiple applications, bringing them into compliance with enterprise standards.',
