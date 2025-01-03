@@ -14,7 +14,7 @@ const workExperience: WorkExperience[] = [
   {
     "title": "Data Scientist",
     "company": "Johnson Controls",
-    "location": ["Milwaukee, WI"],
+    "location": ["Milwaukee, WI (Remote)"],
     "date": "October 2024 – Present",
     "responsibilities": [
       "Designing and implementing an Azure LLM landing zone using Terraform to enable rapid deployment of infrastructure for LLM and RAG-based projects, streamlining AI development across the enterprise.",
