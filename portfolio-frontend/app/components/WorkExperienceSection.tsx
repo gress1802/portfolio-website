@@ -12,6 +12,18 @@ interface WorkExperience {
 
 const workExperience: WorkExperience[] = [
   {
+    "title": "Data Scientist",
+    "company": "Johnson Controls",
+    "location": ["Milwaukee, WI"],
+    "date": "October 2024 – Present",
+    "responsibilities": [
+      "Designing and implementing an Azure LLM landing zone using Terraform to enable rapid deployment of infrastructure for LLM and RAG-based projects, streamlining AI development across the enterprise.",
+      "Developing and maintaining Infrastructure as Code (IaC) for a centralized LLM hub, hosted on Azure API Management, integrating Azure OpenAI and self-hosted models to support all enterprise LLM applications with load balancing and scalability.",
+      "Building and deploying over 100 VAT forecasting XGBoost models for legal entities within Johnson Controls, automating the entire ML lifecycle using Azure Machine Learning and Azure DevOps, from data preparation and model registration to training. Insights are stored in Snowflake and visualized in Power BI dashboards.",
+      "Engineering a legal contract analysis agentic system leveraging GPT-4o, collaboratively prompt-engineered with JCI Legal Strategy, to review NDAs and contracts, identify areas requiring redlining, and save the legal team an estimated 33% of their contract review time."
+    ]
+  },  
+  {
     title: 'Solution Architect Intern',
     company: 'Johnson Controls',
     location: ['La Crosse, WI', 'Milwaukee, WI'],
